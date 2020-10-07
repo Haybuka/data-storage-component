@@ -28,7 +28,8 @@
     }
 
     .meter {
-      margin: 5px 0;
+      margin: 10px 0;
+      margin-bottom: 5px;
       display: block;
       height: 10px;
       /* Can be anything */
@@ -55,6 +56,10 @@
         inset 0 -2px 6px rgba(0, 0, 0, 0.4);
       position: relative;
       overflow: hidden;
+    }
+
+    .data>small {
+      font-size: 10px;
     }
 
     /* .meter>span:after {
@@ -88,24 +93,26 @@
       justify-content: space-between;
       width: 600px;
       margin: 20px auto;
+      padding: 20px;
     }
 
     body {
 
       margin: 0;
+      padding: 0;
     }
 
     * {
-      box-sizing: border-box;
+      box-sizing: border-box !important;
+      color: #fff;
     }
 
     main>.section {
-      background: rgb(4, 1, 26);
+      background: hsl(228, 56%, 26%);
       color: #fff;
       display: block;
       height: 100px;
       width: 200px;
-      border-top: 3px solid rgb(38, 22, 126);
       border-top-left-radius: 3px;
       border-top-right-radius: 50px;
       border-bottom-right-radius: 5px;
@@ -134,41 +141,52 @@
 
     .data {
       position: relative;
-      background-color: green;
-      padding: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
+      background-color: hsl(228, 56%, 26%);
+      padding: 15px 20px;
       border-radius: 5px;
       width: 80%;
     }
 
     .data-amt {
-      box-shadow: 3px 5px 5px rgba(3, 3, 3, 0.514);
+      box-shadow: 5px 10px 10px rgba(3, 3, 3, 0.514);
       position: absolute;
       padding: 10px;
       padding-top: 10px;
       padding-bottom: 20px;
-      right: 20px;
-      top: -20px;
+      right: 25px;
+      top: -30px;
       background: #fff;
-      border-radius: 10px;
-
+      color: hsl(229, 57%, 11%) !important;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 30px;
       clip-path: polygon(0% 0%, 100% 0%, 102.36% 48%, 105.50% 103.34%, 86.5% 69.33%, -8px 69.33%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .data-amt h2 {
       display: inline-block;
       margin: 0;
-      font-size: 15px;
+      font-size: 25px;
+      color: inherit;
     }
 
     .data-amt--left {
+      margin: 5px;
       display: inline-block;
+      color: inherit;
+      font-size: 10px;
     }
 
     .giga-space {
       display: flex;
       justify-content: space-between;
+    }
+
+    .giga-space small {
+      font-size: 10px;
     }
 
     .lead-img {
@@ -187,6 +205,42 @@
       transform: translate(-20%);
       margin-left: 20px;
     }
+
+    .img-bkg {
+      background-color: hsl(229, 57%, 11%);
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        background-color: red;
+      }
+
+      main {
+        display: block;
+        width: 100% !important;
+      }
+
+      .section {
+        width: 100% !important;
+        margin: 10px 0 !important;
+      }
+
+      .data {
+        width: 100%;
+
+      }
+
+      .data-amt {
+        right: 50% !important;
+        transform: translateX(50%);
+        top: 65px !important;
+        clip-path: none;
+        border-radius: 5px;
+        padding: 5px;
+      }
+    }
   </style>
 </head>
 
@@ -198,13 +252,13 @@
           <img src="images/logo.svg" alt="">
         </div>
         <aside>
-          <div>
+          <div class="img-bkg">
             <img src="images/icon-document.svg" alt="">
           </div>
-          <div>
+          <div class="img-bkg">
             <img src="images/icon-folder.svg" alt="">
           </div>
-          <div>
+          <div class="img-bkg">
             <img src="images/icon-upload.svg" alt="">
           </div>
         </aside>
@@ -216,7 +270,7 @@
         <span style="width: 75%"></span>
       </div>
       <div class="data-amt">
-        <h2>185 GB</h2> <span class="data-amt--left">Left</span>
+        <h2>185</h2> <span class="data-amt--left"> GB Left</span>
       </div>
       <div class="giga-space">
         <small>
