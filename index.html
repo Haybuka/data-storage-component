@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    progress {
+      /* background-color: red; */
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .meter {
+      margin: 5px 0;
+      display: block;
+      height: 10px;
+      /* Can be anything */
+      position: relative;
+      background: #555;
+      -moz-border-radius: 25px;
+      -webkit-border-radius: 25px;
+      border-radius: 25px;
+      padding: 1px;
+      box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.3);
+    }
+
+
+    .meter>span {
+      display: block;
+      height: 100%;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      background-color: rgb(43, 194, 83);
+      background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+      box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* .meter>span:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-image: linear-gradient(-45deg,
+          rgba(255, 255, 255, .2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, .2) 50%,
+          rgba(255, 255, 255, .2) 75%,
+          transparent 75%,
+          transparent);
+      z-index: 1;
+      background-size: 50px 50px;
+      animation: move 2s linear infinite;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      overflow: hidden;
+    } */
+
+    main {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      width: 600px;
+      margin: 20px auto;
+    }
+
+    body {
+
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    main>.section {
+      background: rgb(4, 1, 26);
+      color: #fff;
+      display: block;
+      height: 100px;
+      width: 200px;
+      border-top: 3px solid rgb(38, 22, 126);
+      border-top-left-radius: 3px;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 5px;
+      padding: 5px;
+      margin: 0;
+      margin-right: 15px;
+      position: relative;
+    }
+
+    aside {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    aside div {
+      margin: 10px;
+      /* width: 20px;
+      height: 17px; */
+    }
+
+    aside img {
+      width: 20px;
+      height: 17px;
+    }
+
+    .data {
+      position: relative;
+      background-color: green;
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 5px;
+      width: 80%;
+    }
+
+    .data-amt {
+      box-shadow: 3px 5px 5px rgba(3, 3, 3, 0.514);
+      position: absolute;
+      padding: 10px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      right: 20px;
+      top: -20px;
+      background: #fff;
+      border-radius: 10px;
+
+      clip-path: polygon(0% 0%, 100% 0%, 102.36% 48%, 105.50% 103.34%, 86.5% 69.33%, -8px 69.33%);
+    }
+
+    .data-amt h2 {
+      display: inline-block;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .data-amt--left {
+      display: inline-block;
+    }
+
+    .giga-space {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .lead-img {
+      width: 90px;
+      margin-left: 14px;
+    }
+
+    .lead-img img {
+      width: 100%;
+    }
+
+    .centerDiv {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      transform: translate(-20%);
+      margin-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="section">
+      <div class="centerDiv">
+        <div class="lead-img">
+          <img src="images/logo.svg" alt="">
+        </div>
+        <aside>
+          <div>
+            <img src="images/icon-document.svg" alt="">
+          </div>
+          <div>
+            <img src="images/icon-folder.svg" alt="">
+          </div>
+          <div>
+            <img src="images/icon-upload.svg" alt="">
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="data">
+      <small> You’ve used 815 GB of your storage</small>
+      <div class="meter orange">
+        <span style="width: 75%"></span>
+      </div>
+      <div class="data-amt">
+        <h2>185 GB</h2> <span class="data-amt--left">Left</span>
+      </div>
+      <div class="giga-space">
+        <small>
+          0 GB
+        </small>
+        <small>
+          1000 GB
+        </small>
+      </div>
+      <!-- 907 vattier apt 2,manhattan ks -->
+
+    </section>
+
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script>
+    console.dir(document.getElementsByTagName('progress'))
+  </script>
+</body>
+
+</html>
