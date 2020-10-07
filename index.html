@@ -92,14 +92,20 @@
       align-items: end;
       justify-content: space-between;
       width: 600px;
-      margin: 20px auto;
+      margin: 50px auto;
       padding: 20px;
+      position: relative;
     }
 
     body {
-
+      background: url('images/bg-desktop.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-y: 90px;
+      background-color: hsl(229, 57%, 11%);
       margin: 0;
       padding: 0;
+
     }
 
     * {
@@ -115,6 +121,7 @@
       width: 200px;
       border-top-left-radius: 3px;
       border-top-right-radius: 50px;
+      border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       padding: 5px;
       margin: 0;
@@ -216,7 +223,14 @@
 
     @media screen and (max-width: 600px) {
       body {
-        background-color: red;
+        background: url('images/bg-mobile.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 0;
+        background-color: hsl(229, 57%, 11%);
+        margin: 0;
+        padding: 0;
+
       }
 
       main {
